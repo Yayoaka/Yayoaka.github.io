@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas Studer - Game Developer</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -22,7 +25,16 @@
         <li><a href="#education">Formation</a></li>
         <!-- <li><a href="#contact">Contact</a></li> -->
       </ul>
+      <ul class="social-links">
+        <li><a href="https://github.com/Yayoaka" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/lucas-studer/" target="_blank" title="LinkedIn"><i
+              class="fab fa-linkedin"></i></a></li>
+        <li><a href="/assets/CV_Lucas_Studer.pdf" download target="_blank" title="Télécharger mon CV"><i
+              class="fas fa-file-download"></i></a></li>
+      </ul>
     </nav>
+
+
   </header>
 
   <section id="home" class="hero">
@@ -37,7 +49,7 @@
     <h2 class="section-title">À propos</h2>
     <div class="about-content">
       <div class="profile-image">
-        🎮
+        <img src="assets/img/portfolio/img_profile.jpg" alt="Photo de profil" />
       </div>
       <div class="about-text">
         <h3>Game Programmer</h3>
@@ -124,10 +136,27 @@
         <p>Projet de jeu développé avec Unity, intégrant des mécaniques de gameplay innovantes et une interface
           utilisateur intuitive.</p>
         <div class="project-buttons">
-          <a href="#" class="project-btn">Voir</a>
+          <a href="#" class="project-btn open-popup-btn" data-popup="popup-1">Voir</a>
           <a href="#" class="project-btn">Télécharger</a>
         </div>
       </div>
+
+      <!-- Popup cachée -->
+      <div class="popup" id="popup-1">
+        <span class="close-popup-btn">&times;</span>
+        <h2>Poupou le Lapin</h2>
+        <p><strong>Brève présentation :</strong><br>
+          Poupou le Lapin est un jeu en 2D mêlant action, stratégie, et progression, le tout enveloppé d’une esthétique
+          pixel art unique.</p>
+        <p>C'est un jeu d’action-aventure captivant dans lequel les joueurs doivent survivre à une série de cartes
+          périlleuses, affronter des mobs redoutables ainsi que des boss épiques.</p>
+        <p><a href="https://github.com/Sugow0/poupou-game" target="_blank" rel="noopener noreferrer">Voir le projet sur
+            GitHub</a></p>
+      </div>
+
+
+
+
       <div class="project-card">
         <div class="project-icon">🎯</div>
         <h3>Jeu Unreal Engine</h3>
@@ -189,41 +218,60 @@
           <div class="education-year">2024 - 2025</div>
           <h3>Bachelor 3</h3>
           <h4>Ynov Campus, Lyon, France</h4>
-          <p>• Game Development avec C++ : 2D & 3D<br>
-            • Moteurs de jeu : Unity & Unreal Engine<br>
-            • Administration de base de données : SQL & NoSQL<br>
-            • Pratiques DevOps, Gestion d'équipe & Leadership<br>
-            • Prise de parole & Communication</p>
+          <ul>
+            <li>Game Development avec C++ : 2D & 3D</li>
+            <li>Moteurs de jeu : Unity & Unreal Engine</li>
+            <li>Administration de base de données : SQL &
+              NoSQL</li>
+            <li>Pratiques DevOps, Gestion d'équipe & Leadership</li>
+            <li>Prise de parole & Communication</li>
+          </ul>
         </div>
       </div>
+
       <div class="education-item">
         <div class="education-content">
           <div class="education-year">2023 - 2024</div>
           <h3>Bachelor 2</h3>
           <h4>Ynov Campus, Lyon, France</h4>
-          <p>Informatique (C#, Java, Développement mobile, IOT/Programmation micro-contrôleur, UX Design, PHP, Game
-            programming avec Unity, SQL, Beathoven (Hackathon))</p>
+          <ul>
+            <li>C#, Java, Développement mobile</li>
+            <li>IOT / Programmation micro-contrôleur</li>
+            <li>UX Design, PHP</li>
+            <li>Game programming avec Unity, SQL</li>
+            <li>Beathoven (Hackathon)</li>
+          </ul>
         </div>
       </div>
+
       <div class="education-item">
         <div class="education-content">
           <div class="education-year">2022 - 2023</div>
           <h3>Bachelor 1</h3>
           <h4>Ynov Campus, Lyon, France</h4>
-          <p>Informatique (POO, Java, Administration Poste Client, Fonctionnement des réseaux, Linux, Demolynov
-            (Challenge 48h))</p>
+          <ul>
+            <li>POO, Java</li>
+            <li>Administration Poste Client</li>
+            <li>Fonctionnement des réseaux, Linux</li>
+            <li>Demolynov (Challenge 48h)</li>
+          </ul>
         </div>
       </div>
+
       <div class="education-item">
         <div class="education-content">
           <div class="education-year">2022</div>
           <h3>Baccalauréat</h3>
-          <h4>Lycée Polyvalent Régional Jacques Audiberti, Antibes, France</h4>
-          <p>Mathématiques NSI</p>
+          <h4>Lycée Jacques Audiberti, Antibes, France</h4>
+          <ul>
+            <li>Spécialités Mathématiques et NSI</li>
+          </ul>
         </div>
       </div>
+
     </div>
   </section>
+
 
   <!-- <section id="contact">
     <h2 class="section-title">Contact</h2>

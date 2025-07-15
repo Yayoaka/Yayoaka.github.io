@@ -185,16 +185,23 @@ section {
 .profile-image {
     width: 300px;
     height: 300px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #00ffff, #0080ff);
-    padding: 5px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    animation: pulse 2s ease-in-out infinite;
+    /* autres styles */
 }
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
 
 @keyframes pulse {
     0% {
@@ -332,66 +339,50 @@ section {
 /* Education Section */
 .education-timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-}
-
-.education-timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #00ffff;
-    transform: translateX(-50%);
+    padding-left: 40px;
+    border-left: 3px solid #00ffff;
 }
 
 .education-item {
     position: relative;
     margin: 2rem 0;
-    padding: 0 2rem;
+    padding-left: 60px;
 }
 
-.education-item:nth-child(odd) {
-    text-align: right;
-}
-
-.education-item:nth-child(even) {
-    text-align: left;
-}
-
-.education-content {
-    background: rgba(0, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 2px solid rgba(0, 255, 255, 0.3);
-    position: relative;
-}
-
-.education-content::before {
+.education-item::before {
     content: '';
     position: absolute;
-    top: 20px;
+    top: 1.5rem;
+    left: -11px;
     width: 20px;
     height: 20px;
     background: #00ffff;
     border-radius: 50%;
+    border: 2px solid white;
+    z-index: 2;
 }
 
-.education-item:nth-child(odd) .education-content::before {
-    left: -30px;
-}
-
-.education-item:nth-child(even) .education-content::before {
-    right: -30px;
+.education-content {
+    background: rgba(0, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.1);
+    width: 100%;
+    max-width: 550px;
+    /* <- plus compact */
 }
 
 .education-year {
     color: #00ffff;
     font-weight: bold;
     font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
+
+
 
 /* Contact Section */
 .contact-form {
@@ -483,4 +474,61 @@ footer {
     .education-content::before {
         left: -30px !important;
     }
+}
+
+.social-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00ffff;
+}
+
+
+.popup {
+    position: fixed;
+    /* Fixe la popup par rapport à la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Prend toute la largeur de la fenêtre */
+    height: 100vh;
+    /* Prend toute la hauteur de la fenêtre */
+    background: rgba(0, 0, 0, 0.5);
+    /* Fond semi-transparent */
+    display: none;
+    /* Cachée par défaut */
+    justify-content: center;
+    /* Centre horizontalement le contenu */
+    align-items: center;
+    /* Centre verticalement le contenu */
+    z-index: 9999;
+    /* Au-dessus de tout */
+    display: flex;
+    /* Pour centrer le contenu */
+}
+
+.popup-content {
+    background: white;
+    color: black;
+    /* Texte en noir pour être visible */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content a {
+    color: blue;
+    text-decoration: underline;
 }

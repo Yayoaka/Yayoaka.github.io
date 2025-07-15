@@ -79,5 +79,44 @@ function addHoverEffects() {
     });
 }
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Récupère tous les boutons pour ouvrir les popups
+    const openPopupBtns = document.querySelectorAll('.open-popup-btn');
+    // Récupère toutes les croix pour fermer les popups
+    const closePopupBtns = document.querySelectorAll('.close-popup-btn');
+
+    openPopupBtns.forEach(btn => {
+        btn.addEventListener('click', function (event) {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+            const popupId = btn.getAttribute('data-popup');
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.style.display = 'flex'; // Affiche la popup
+            }
+        });
+    });
+
+    closePopupBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const popup = btn.closest('.popup');
+            if (popup) {
+                popup.style.display = 'none'; // Cache la popup
+            }
+        });
+    });
+
+    // Fermer la popup si on clique en dehors du contenu
+    window.addEventListener('click', function (event) {
+        const popups = document.querySelectorAll('.popup');
+        popups.forEach(popup => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    });
+});
+
+
 // Initialiser les effets de survol
 document.addEventListener('DOMContentLoaded', addHoverEffects);
