@@ -1,855 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Portfolio Lucas Studer</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <!-- <link href="assets/img/" rel="icon"> -->
-  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Studer - Game Developer</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+  <div id="particles"></div>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <header>
+    <nav>
+      <div class="logo">Lucas Studer</div>
+      <ul class="nav-links">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#education">Formation</a></li>
+        <!-- <li><a href="#contact">Contact</a></li> -->
+      </ul>
+    </nav>
+  </header>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Game Developer</h1>
+      <p>Passionné par le développement de jeux vidéo</p>
+      <a href="#about" class="cta-button">Découvrir mon profil</a>
+    </div>
+  </section>
 
-      <div class="profile">
-        <img src="assets/img/portfolio/Lucas_ident_no_shadow.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Lucas Studer</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="CV_Lucas_Studer.pdf" target="_blank">
-            <i class="bx bx-file"></i></a>
-          <a href="https://github.com/Yayoaka" class="github"><i class="bx bxl-github"></i></a>
-          <!-- <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> -->
-          <a href="https://www.linkedin.com/in/lucas-studer/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  <section id="about">
+    <h2 class="section-title">À propos</h2>
+    <div class="about-content">
+      <div class="profile-image">
+        🎮
+      </div>
+      <div class="about-text">
+        <h3>Game Programmer</h3>
+        <p>Passionné par le développement de jeux vidéo, je suis actuellement étudiant en première année de master en
+          Game Programming. Mon objectif est de devenir développeur de jeux, et je me forme activement avec des moteurs
+          reconnus comme Unreal Engine et Unity.</p>
+        <p>En tant qu'étudiant en informatique chez Ynov, je me consacre pleinement à
+          l'apprentissage et à la maîtrise des technologies liées au développement de jeux. Mon parcours académique et
+          mes projets personnels me permettent de développer de solides compétences en programmation et en création
+          interactive.</p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <strong>📱 Téléphone</strong><br>
+            +33 6 51 28 33 75
+          </div>
+          <div class="contact-item">
+            <strong>📍 Ville</strong><br>
+            Lyon, France
+          </div>
+          <div class="contact-item">
+            <strong>✉️ Email</strong><br>
+            lucas.studer@ynov.com
+          </div>
+          <div class="contact-item">
+            <strong>🎂 Âge</strong><br>
+            21 ans
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-              <span>Portfolio</span></a></li>
-          <li><a href="#blog" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Blog</span></a></li>
-          <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+  <section id="skills">
+    <h2 class="section-title">Compétences</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>🎮 Développement de Jeux</h3>
+        <ul class="skill-list">
+          <li>Unity</li>
+          <li>Unreal Engine</li>
+          <li>C#</li>
+          <li>C++</li>
+          <li>POO (Programmation Orientée Objet)</li>
+          <li>JavaFX</li>
         </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Lucas Studer</h1>
-      <p>I'm <span class="typed" data-typed-items="Game Programmer"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Passionate about video game development, I am currently a third-year Computer Science student specializing
-            in game design. My goal is to become a game developer, and I am actively training with renowned engines like
-            Unreal Engine and Unity</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/portfolio/Lucas_ident_no_shadow.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Game Programmer</h3>
-            <p class="fst-italic">
-              As a Computer Science student in Lyon, I am fully dedicated to learning and mastering the technologies
-              related to game development. My academic background and personal projects allow me to develop
-              strong skills in programming and interactive creation.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                    <span>https://yayoaka.github.io</span>
-                  </li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+33 6 51 28 33 75</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Lyon, France</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>lucas@studer.fr</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor 3</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <!-- <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Happy Clients</strong> consequuntur quae</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Projects</strong> adipisci atque cum quia aut</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div> -->
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <!-- <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>My skills are oriented towards the development of video games and web sites using the following
-            technologies: </p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <ul>
-              <li>Html</li>
-              <li>CSS</li>
-              <li>Javascript and JSON</li>
-              <li>Java and JavaFx</li>
-              <li>Golang</li>
-              <li>POO</li>
-              <li>C #</li>
-              <li>C ++</li>
-            </ul>
-
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <ul>
-              <li>Android studio</li>
-              <li>Unity</li>
-              <li>Unreal Engine</li>
-              <li>Visual studio Code</li>
-              <li>Virtual Box</li>
-            </ul>
-
-
-          </div>
-        </div>
-
+      <div class="skill-category">
+        <h3>🌐 Développement Web</h3>
+        <ul class="skill-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript & JSON</li>
+          <li>PHP</li>
+          <li>Visual Studio Code</li>
+        </ul>
       </div>
-
+      <div class="skill-category">
+        <h3>📱 Développement Mobile</h3>
+        <ul class="skill-list">
+          <li>Android Studio</li>
+          <li>Java</li>
+        </ul>
       </div>
-    </section>End Skills Section -->
-
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-    
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>My skills are mainly focused on video game development and website creation. Here is an overview of the technologies and tools I use:</p>
-        </div>
-    
-        <div class="row skills-content">
-    
-          <div class="col-lg-6" data-aos="fade-up">
-            <h4>Web Development</h4>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript & JSON</li>
-              <li>Visual Studio Code</li>
-            </ul>
-    
-            <h4>Mobile Development</h4>
-            <ul>
-              <li>Android Studio</li>
-              <li>Java</li>
-            </ul>
-    
-            <h4>Tools & Environments</h4>
-            <ul>
-              <li>VirtualBox</li>
-              <li>Golang</li>
-            </ul>
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h4>Game Development</h4>
-            <ul>
-              <li>Unity</li>
-              <li>Unreal Engine</li>
-              <li>JavaFX</li>
-              <li>C#</li>
-              <li>C++</li>
-              <li>OOP (Object-Oriented Programming)</li>
-            </ul>
-          </div>
-    
-        </div>
-    
-      </div>
-    </section><!-- End Skills Section -->
-    
-    
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>I am in Bachelor 2 computer science training, I am moving towards the design of video games and websites
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <!-- <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Alex Smith</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and
-                  developing user-centered digital/print marketing material from initial concept to final, polished
-                  deliverable.</em></p>
-              <ul>
-                <li>Portland par 127,Orlando, FL</li>
-                <li>(123) 456-7891</li>
-                <li>alice.barkley@example.com</li>
-              </ul>
-            </div> -->
-
-            
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor 3</h4>
-              <h5>2024 - 2025</h5>
-              <p><em>Ynov Campus, Lyon, France</em></p>
-              <ul>
-                <li>Game Development with C++: 2D & 3D</li>
-                <li>Game Engines: Unity & Unreal Engine</li>
-                <li>Database Administration: SQL & NoSQL (Not Only SQL)</li>
-                <li>DevOps Practices, Team Management & Leadership, Public Speaking & Communication</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Bachelor 2</h4>
-              <h5>2023 - 2024</h5>
-              <p><em>Ynov Campus, Lyon, France</em></p>
-              <p>Informatique (C#, Java, Développement mobile, IOT/Programmation micro-controleur, UX Design, PHP,
-                Gameprogramming avec Unity, SQL, Beathoven (Hackathon))</p>
-            </div>
-            <div class="resume-item">
-              <h4>Bachelor 1</h4>
-              <h5>2022 - 2023</h5>
-              <p><em>Ynov Campus, Lyon, France</em></p>
-              <p>Informatique (POO, Java, Administration Poste Client, Fonctionnement des réseaux, Linux, Demolynov
-                (Challenge 48h))</p>
-            </div>
-            <div class="resume-item">
-              <h4>Baccalauréat</h4>
-              <h5>2022</h5>
-              <p><em>Lycée Polyvalent Régional Jacques Audiberti, Antibes, France</em></p>
-              <p>Mathématiques NSI</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <!-- <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior graphic design specialist</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Experion, New York, NY </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production
-                  communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the
-                  project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the
-                  design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and
-                  advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-              </ul>
-            </div> -->
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>As part of my first year of bachelor, here are the main projects and technologies on which I worked: </p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-game">Game</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/accueil_img_groupietracker.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/accueil_img_groupietracker.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Groupie Tracker"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details-groupie-tracker.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/accueil_img_sortable.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/accueil_img_sortable.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Sortable"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details-sortable.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/accueil_img_boxxle.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/accueil_img_boxxle.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Boxxle"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details-boxxle.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Blog</h2>
-          <p>In my second year I did an internship at UltraTimes here is what I did during these 6 weeks :</p>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/blog/ultratimeswebaffiche.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/blog/ultratimeswebaffiche.png" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Bienvenue chez Ultra Times"><i class="bx bx-plus"></i></a>
-                <a href="article1.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/blog/championtacticsaffiche.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/blog/championtacticsaffiche.png" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Analyse Champion Tactics"><i class="bx bx-plus"></i></a>
-                <a href="article2.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/blog/chatbotaffiche.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/blog/chatbotaffiche.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Utilisation d'un ChatBot"><i class="bx bx-plus"></i></a>
-                <a href="article3.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/blog/jeuaffiche.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/blog/jeuaffiche.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Initialisation d’un Jeu de Type Détective"><i class="bx bx-plus"></i></a>
-                <a href="article4.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/blog/inventaireaffiche.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/blog/inventaireaffiche.png" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Développement d'un Système d'Inventaire"><i
-                    class="bx bx-plus"></i></a>
-                <a href="article5.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-wrap">
-                  <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-links">
-                    <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-wrap">
-                  <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-links">
-                    <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div> -->
-
-        </div>
-
-      </div>
-    </section><!-- End Blog Section -->
-
-    <!-- ======= Services Section ======= -->
-    <!-- <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Game Developer</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-              occaecati cupiditate non provident</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Web Developer</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat tarad limino ata</p>
-          </div> -->
-    <!-- <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-              voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-              soluta nobis est eligendi</p>
-          </div> -->
-    <!-- </div>
-
-      </div> -->
-    </section><!-- End Services Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <!-- <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
-                  quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                  quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
-                  tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
-                  minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
-                  labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section>End Testimonials Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>if my profile interests you for a project or a student internship, here are the different ways to contact
-            me.</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Lyon 5th district</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>lucas.studer@ynov.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+33 6 51 28 33 75</p>
-              </div>
-
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37458.81207112656!2d4.797196046697473!3d45.74828176745756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb9a03d849c7%3A0x508ab2ae4c21900!2s5e%20Arrondissement%2C%2069005%20Lyon!5e0!3m2!1sfr!2sfr!4v1683531597506!5m2!1sfr!2sfr"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" frameborder="0"
-                style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <!-- <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div> -->
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      <div class="skill-category">
+        <h3>🛠️ Outils & Environnements</h3>
+        <ul class="skill-list">
+          <li>VirtualBox</li>
+          <li>Golang</li>
+          <li>SQL & NoSQL</li>
+          <li>DevOps</li>
+          <li>Linux</li>
+        </ul>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </section>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <section id="projects">
+    <h2 class="section-title">Projets</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon">🎮</div>
+        <h3>Jeu Unity 2D</h3>
+        <p>Projet de jeu développé avec Unity, intégrant des mécaniques de gameplay innovantes et une interface
+          utilisateur intuitive.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">Voir</a>
+          <a href="#" class="project-btn">Télécharger</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🎯</div>
+        <h3>Jeu Unreal Engine</h3>
+        <p>Expérience 3D immersive créée avec Unreal Engine, démontrant mes compétences en programmation C++ et en
+          design de niveaux.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">Voir</a>
+          <a href="#" class="project-btn">Télécharger</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🏆</div>
+        <h3>Beathoven (Hackathon)</h3>
+        <p>Projet réalisé lors d'un hackathon, alliant créativité et compétences techniques pour créer une solution
+          innovante.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">Voir</a>
+          <a href="#" class="project-btn">Télécharger</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">⚡</div>
+        <h3>Demolynov (Challenge 48h)</h3>
+        <p>Défi de développement en 48 heures, mettant en avant ma capacité à travailler sous pression et à livrer
+          rapidement.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">Voir</a>
+          <a href="#" class="project-btn">Télécharger</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">📱</div>
+        <h3>Application Mobile</h3>
+        <p>Application Android développée en Java, intégrant des fonctionnalités modernes et une expérience utilisateur
+          optimisée.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">Voir</a>
+          <a href="#" class="project-btn">Télécharger</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🌐</div>
+        <h3>Site Web Interactif</h3>
+        <p>Projet web alliant design moderne et fonctionnalités avancées, démontrant mes compétences en développement
+          front-end.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">Voir</a>
+          <a href="#" class="project-btn">Télécharger</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <section id="education">
+    <h2 class="section-title">Formation</h2>
+    <div class="education-timeline">
+      <div class="education-item">
+        <div class="education-content">
+          <div class="education-year">2024 - 2025</div>
+          <h3>Bachelor 3</h3>
+          <h4>Ynov Campus, Lyon, France</h4>
+          <p>• Game Development avec C++ : 2D & 3D<br>
+            • Moteurs de jeu : Unity & Unreal Engine<br>
+            • Administration de base de données : SQL & NoSQL<br>
+            • Pratiques DevOps, Gestion d'équipe & Leadership<br>
+            • Prise de parole & Communication</p>
+        </div>
+      </div>
+      <div class="education-item">
+        <div class="education-content">
+          <div class="education-year">2023 - 2024</div>
+          <h3>Bachelor 2</h3>
+          <h4>Ynov Campus, Lyon, France</h4>
+          <p>Informatique (C#, Java, Développement mobile, IOT/Programmation micro-contrôleur, UX Design, PHP, Game
+            programming avec Unity, SQL, Beathoven (Hackathon))</p>
+        </div>
+      </div>
+      <div class="education-item">
+        <div class="education-content">
+          <div class="education-year">2022 - 2023</div>
+          <h3>Bachelor 1</h3>
+          <h4>Ynov Campus, Lyon, France</h4>
+          <p>Informatique (POO, Java, Administration Poste Client, Fonctionnement des réseaux, Linux, Demolynov
+            (Challenge 48h))</p>
+        </div>
+      </div>
+      <div class="education-item">
+        <div class="education-content">
+          <div class="education-year">2022</div>
+          <h3>Baccalauréat</h3>
+          <h4>Lycée Polyvalent Régional Jacques Audiberti, Antibes, France</h4>
+          <p>Mathématiques NSI</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p style="text-align: center; margin-bottom: 2rem;">Si mon profil vous intéresse pour un projet ou un stage
+      étudiant, voici les différentes façons de me contacter.</p>
+    <div class="contact-form">
+      <form>
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Envoyer le message</button>
+      </form>
+    </div>
+  </section> -->
 
+  <footer>
+    <p>&copy; 2025 Lucas Studer - Game Developer. Tous droits réservés.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
