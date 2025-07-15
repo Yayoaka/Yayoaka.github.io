@@ -146,8 +146,17 @@ function initCarousels() {
     });
 }
 
+function closeAllPopupsOnLoad() {
+    document.querySelectorAll('.popup.visible').forEach(popup => {
+        popup.classList.remove('visible');
+        popup.setAttribute('aria-hidden', 'true');
+    });
+}
+
+
 // Initialisation globale
 document.addEventListener('DOMContentLoaded', () => {
+    closeAllPopupsOnLoad();
     createParticles();
     initSmoothScrolling();
     initFormSubmission();
