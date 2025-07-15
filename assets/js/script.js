@@ -6,12 +6,13 @@ function createParticles() {
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.width = Math.random() * 4 + 2 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.animationDelay = `${Math.random() * 6}s`;
+        particle.style.animationDuration = `${Math.random() * 3 + 3}s`;
         container.appendChild(particle);
     }
 }
@@ -19,9 +20,9 @@ function createParticles() {
 // Défilement fluide pour les liens de navigation
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', e => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(anchor.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -36,87 +37,122 @@ function initSmoothScrolling() {
 function initFormSubmission() {
     const form = document.querySelector('form');
     if (form) {
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', e => {
             e.preventDefault();
             alert('Message envoyé ! Je vous répondrai dans les plus brefs délais.');
-            this.reset();
+            form.reset();
         });
     }
 }
 
-// Effet de défilement pour le header
+// Effet de scroll sur le header
 function initScrollEffect() {
-    window.addEventListener('scroll', function () {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(0, 0, 0, 0.95)';
-        } else {
-            header.style.background = 'rgba(0, 0, 0, 0.9)';
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        header.style.background = window.scrollY > 100
+            ? 'rgba(0, 0, 0, 0.95)'
+            : 'rgba(0, 0, 0, 0.9)';
+    });
+}
+
+// Effets au survol des cartes
+function addHoverEffects() {
+    const cards = document.querySelectorAll('.project-card, .skill-category');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+}
+
+// Gestion des popups
+function initPopups() {
+    const openBtns = document.querySelectorAll('.open-popup-btn');
+    const closeBtns = document.querySelectorAll('.close-popup-btn');
+
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            const popup = document.getElementById(btn.dataset.popup);
+            if (popup) {
+                popup.classList.add('visible');
+                popup.setAttribute('aria-hidden', 'false');
+            }
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const popup = btn.closest('.popup');
+            if (popup) {
+                popup.classList.remove('visible');
+                popup.setAttribute('aria-hidden', 'true');
+            }
+        });
+    });
+
+    // Clic en dehors
+    window.addEventListener('click', e => {
+        document.querySelectorAll('.popup.visible').forEach(popup => {
+            if (e.target === popup) {
+                popup.classList.remove('visible');
+                popup.setAttribute('aria-hidden', 'true');
+            }
+        });
+    });
+
+    // Touche Échap
+    window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.popup.visible').forEach(popup => {
+                popup.classList.remove('visible');
+                popup.setAttribute('aria-hidden', 'true');
+            });
         }
     });
 }
 
-// Initialisation des fonctionnalités
-document.addEventListener('DOMContentLoaded', function () {
+// Initialisation du carousel
+function initCarousels() {
+    const carousels = document.querySelectorAll('.carousel');
+
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = track.querySelectorAll('img');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const slideWidth = slides[0].clientWidth + 10;
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+        updateCarousel();
+    });
+}
+
+// Initialisation globale
+document.addEventListener('DOMContentLoaded', () => {
     createParticles();
     initSmoothScrolling();
     initFormSubmission();
     initScrollEffect();
+    addHoverEffects();
+    initPopups();
+    initCarousels();
 });
-
-// Fonction pour ajouter des animations au survol des cartes
-function addHoverEffects() {
-    const cards = document.querySelectorAll('.project-card, .skill-category');
-
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function () {
-            this.style.transform = 'translateY(-5px) scale(1.02)';
-        });
-
-        card.addEventListener('mouseleave', function () {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-}
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Récupère tous les boutons pour ouvrir les popups
-    const openPopupBtns = document.querySelectorAll('.open-popup-btn');
-    // Récupère toutes les croix pour fermer les popups
-    const closePopupBtns = document.querySelectorAll('.close-popup-btn');
-
-    openPopupBtns.forEach(btn => {
-        btn.addEventListener('click', function (event) {
-            event.preventDefault(); // Empêche le comportement par défaut du lien
-            const popupId = btn.getAttribute('data-popup');
-            const popup = document.getElementById(popupId);
-            if (popup) {
-                popup.style.display = 'flex'; // Affiche la popup
-            }
-        });
-    });
-
-    closePopupBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-            const popup = btn.closest('.popup');
-            if (popup) {
-                popup.style.display = 'none'; // Cache la popup
-            }
-        });
-    });
-
-    // Fermer la popup si on clique en dehors du contenu
-    window.addEventListener('click', function (event) {
-        const popups = document.querySelectorAll('.popup');
-        popups.forEach(popup => {
-            if (event.target === popup) {
-                popup.style.display = 'none';
-            }
-        });
-    });
-});
-
-
-// Initialiser les effets de survol
-document.addEventListener('DOMContentLoaded', addHoverEffects);

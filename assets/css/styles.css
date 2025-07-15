@@ -25,23 +25,25 @@ body {
 
 .particle {
     position: absolute;
-    background: #00ffff;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
-    opacity: 0.6;
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s infinite ease-in-out;
 }
 
 @keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(0deg);
+    0% {
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-20px) rotate(180deg);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
+
 
 /* Header */
 header {
@@ -492,43 +494,151 @@ footer {
     color: #00ffff;
 }
 
-
 .popup {
     position: fixed;
-    /* Fixe la popup par rapport à la fenêtre */
     top: 0;
     left: 0;
     width: 100vw;
-    /* Prend toute la largeur de la fenêtre */
     height: 100vh;
-    /* Prend toute la hauteur de la fenêtre */
-    background: rgba(0, 0, 0, 0.5);
-    /* Fond semi-transparent */
+    background: rgba(0, 0, 0, 0.6);
     display: none;
-    /* Cachée par défaut */
     justify-content: center;
-    /* Centre horizontalement le contenu */
     align-items: center;
-    /* Centre verticalement le contenu */
     z-index: 9999;
-    /* Au-dessus de tout */
-    display: flex;
-    /* Pour centrer le contenu */
+    animation: fadeIn 0.3s ease forwards;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
 .popup-content {
-    background: white;
-    color: black;
-    /* Texte en noir pour être visible */
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 90%;
-    max-height: 80%;
+    background: #1e1e2f;
+    color: #f0f0f0;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
     overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    position: relative;
+    animation: popupAppear 0.3s ease forwards;
+}
+
+.popup.visible {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-content h2 {
+    color: #d0aaff;
+    margin-top: 0;
+    animation: scaleIn 0.3s ease;
 }
 
 .popup-content a {
-    color: blue;
+    color: #9f7aea;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.popup-content a:hover {
     text-decoration: underline;
+}
+
+.close-popup-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s ease;
+}
+
+.close-popup-btn:hover {
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupAppear {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    gap: 10px;
+}
+
+.carousel-track img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
 }
