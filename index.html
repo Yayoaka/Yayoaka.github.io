@@ -131,6 +131,120 @@
     <h2 class="section-title">Projets</h2>
     <div class="projects-grid">
       <div class="project-card">
+        <div class="project-icon">🏰</div>
+        <h3>Tower Defense 2D</h3>
+        <p>Jeu de défense stratégique développé sous Unity 2D. Défendez votre château en plaçant des tours tactiquement
+          contre des vagues d'ennemis aux caractéristiques variées et évolutives.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn open-popup-btn" data-popup="popup-3">Voir</a>
+          <a href="https://github.com/Yayoaka/Tower-Defense-2d/releases/tag/V1.0" class="project-btn">Télécharger</a>
+        </div>
+      </div>
+
+      <!-- Popup - Tower Defense -->
+      <div class="popup" id="popup-3" aria-hidden="true">
+        <div class="popup-content">
+          <span class="close-popup-btn" aria-label="Fermer">&times;</span>
+          <h2>Tower Defense (Prototype)</h2>
+
+          <!-- Carrousel -->
+          <div class="carousel">
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+              <img src="assets/img/Project/TowerDefense/td_map.png" alt="Carte du jeu">
+              <img src="assets/img/Project/TowerDefense/td_towers.png" alt="Placement des tours">
+              <img src="assets/img/Project/TowerDefense/td_enemies.png" alt="Vagues d’ennemis">
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+          </div>
+
+          <p><strong>Présentation :</strong><br>
+            Prototype de jeu de type <strong>Tower Defense</strong> réalisé sous Unity 2D. Le joueur doit défendre un
+            château en plaçant stratégiquement des tours le long d’un chemin prédéfini.
+          </p><br>
+
+          <p><strong>Fonctionnalités développées :</strong><br>
+            – Système de placement de tours avec emplacements définis<br>
+            – 2 types de tours : portée courte (attaque rapide) et portée longue (attaque lente)<br>
+            – 3 types d’ennemis avec caractéristiques variées : rapide mais fragile, lent mais résistant, équilibré<br>
+            – <strong>Progression dynamique des ennemis</strong> : les points de vie et la quantité d’ennemis augmentent
+            selon la vague<br>
+            – Implémentation du chemin via le système de path<br>
+            – Interface utilisateur : menus, choix de tour, lancement de partie
+          </p><br>
+
+          <p><strong>Technologies :</strong> Unity 2D, C#</p>
+
+          <p>
+            🔗 <a href="https://github.com/Yayoaka/Tower-Defense-2d" target="_blank" rel="noopener noreferrer">Voir le
+              projet sur GitHub</a>
+          </p>
+        </div>
+      </div>
+
+
+
+
+      <!--<div class="project-card">
+        <div class="project-icon">🎯</div>
+        <h3>Tamagochi 3D - Prototype</h3>
+        <p>Simulation de créature virtuelle en 3D avec système de jauges vitales. Développement solo utilisant les
+          Blueprints d'Unreal Engine 5 pour créer des interactions dynamiques.</p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn open-popup-btn" data-popup="popup-2">Voir</a>
+          <a href="#" class="project-btn">Télécharger</a>
+        </div>
+      </div>-->
+
+      <!-- Popup - Tamagochi 3D -->
+      <!--<div class="popup" id="popup-2" aria-hidden="true">
+        <div class="popup-content">
+          <span class="close-popup-btn" aria-label="Fermer">&times;</span>
+          <h2>Tamagochi (Prototype)</h2>-->
+
+          <!-- Carrousel -->
+          <!--<div class="carousel">
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+              <img src="assets/img/portfolio/tamagochi_idle.jpg" alt="Vue générale du Tamagochi">
+              <img src="assets/img/portfolio/tamagochi_eat.jpg" alt="Le monstre mange">
+              <img src="assets/img/portfolio/tamagochi_consoles.jpg" alt="Les consoles d’action">
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+          </div>-->
+
+          <!-- Description -->
+          <!--<p><strong>Présentation :</strong><br>
+            Ce prototype de jeu, réalisé en solo avec Unreal Engine 5 et Blueprint, s’inspire du principe des
+            Tamagotchis.
+            Le joueur doit maintenir les jauges vitales d’un petit monstre (faim, énergie, repos) à l’aide de
+            consoles interactives.
+          </p><br>
+
+          <p><strong>Fonctionnement :</strong><br>
+            Le monstre se déplace librement dans un enclos. Lorsqu’un joueur appuie sur une console, il se rend vers une
+            zone dédiée pour effectuer une action (manger, se recharger, dormir), ce qui recharge une jauge
+            spécifique. Si
+            toutes les jauges tombent à zéro, la créature meurt.
+          </p><br>
+
+          <p><strong>Mon rôle :</strong><br>
+            - Conception complète du prototype en solo<br>
+            - Programmation des jauges vitales, des déplacements et des interactions<br>
+            - Mise en place des systèmes d’état, triggers et conditions de fin<br>
+            - Travail sous contrainte de temps (projet express)
+          </p><br>
+
+          <p><strong>Technologies :</strong> Unreal Engine 5, Blueprints</p>
+
+          <p>
+            🔗 <em>Projet en cours de finalisation – lien GitHub à venir</em>
+          </p>
+        </div>
+      </div>-->
+
+
+      <div class="project-card">
         <div class="project-icon">🐇</div>
         <h3>Poupou le Lapin</h3>
         <p>Jeu d'action 2D en pixel art où vous incarnez un lapin affrontant des ennemis et des boss épiques. Projet
@@ -165,80 +279,95 @@
             cadre d’un projet étudiant.
             Le joueur affronte des ennemis variés et des boss épiques à travers divers cartes périlleuses, à l’aide de
             compétences spéciales, potions, et portails de téléportation.
-          </p>
+          </p><br>
 
           <p><strong>Mon rôle :</strong><br>
             J’ai développé le <strong>boss principal</strong> du jeu (système de patterns, états, comportements) et
             conçu les <strong>interfaces utilisateur</strong> :
             menu principal, écrans de victoire/défaite, et système de pause. J’ai également géré les transitions entre
             les scènes.
-          </p>
+          </p><br>
 
           <p><strong>Technologies :</strong> Unity 2D, C#</p>
 
           <p>
-            🔗 <a href="https://github.com/Sugow0/poupou-game" target="_blank" rel="noopener noreferrer">Voir le code
+            🔗 <a href="https://github.com/Yayoaka/Poupou-rabbit-game" target="_blank" rel="noopener noreferrer">Voir le code
               sur GitHub</a>
           </p>
         </div>
       </div>
 
+      
 
 
+      
       <div class="project-card">
-        <div class="project-icon">🎯</div>
-        <h3>Tamagochi 3D - Prototype</h3>
-        <p>Simulation de créature virtuelle en 3D avec système de jauges vitales. Développement solo utilisant les
-          Blueprints d'Unreal Engine 5 pour créer des interactions dynamiques.</p>
+        <div class="project-icon">⚔️</div>
+        <h3>Requiem of the Swarm</h3>
+        <p>Jeu de survie coopératif développé sous Unity 3D. Affrontez des vagues infinies de monstres avec jusqu'à 3 joueurs, 
+          choisissez votre classe et améliorez vos compétences pour survivre le plus longtemps possible.</p>
         <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-2">Voir</a>
+          <a href="#" class="project-btn open-popup-btn" data-popup="popup-4">Voir</a>
           <a href="#" class="project-btn">Télécharger</a>
         </div>
       </div>
 
-      <!-- Popup - Tamagochi 3D -->
-      <div class="popup" id="popup-2" aria-hidden="true">
+      <!-- Popup - Requiem of the Swarm -->
+      <div class="popup" id="popup-4" aria-hidden="true">
         <div class="popup-content">
           <span class="close-popup-btn" aria-label="Fermer">&times;</span>
-          <h2>Tamagochi (Prototype)</h2>
+          <a href="category-horror.html">
+          <h2>Requiem of the Swarm</h2></a>
 
           <!-- Carrousel -->
           <div class="carousel">
             <button class="carousel-btn prev">&#10094;</button>
             <div class="carousel-track">
-              <img src="assets/img/portfolio/tamagochi_idle.jpg" alt="Vue générale du Tamagochi">
-              <img src="assets/img/portfolio/tamagochi_eat.jpg" alt="Le monstre mange">
-              <img src="assets/img/portfolio/tamagochi_consoles.jpg" alt="Les consoles d’action">
+              <img src="assets/img/portfolio/rots_map.jpg" alt="Carte du jeu">
+              <img src="assets/img/portfolio/rots_group_player.jpg" alt="Survivez le plus longtemps possible">
+              <img src="assets/img/portfolio/rots_choice.jpg" alt="Choix des personnages">
             </div>
             <button class="carousel-btn next">&#10095;</button>
           </div>
 
-          <!-- Description -->
           <p><strong>Présentation :</strong><br>
-            Ce prototype de jeu, réalisé en solo avec Unreal Engine 5 et Blueprint, s’inspire du principe des
-            Tamagotchis.
-            Le joueur doit maintenir les jauges vitales d’un petit monstre (faim, énergie, repos) à l’aide de
-            consoles interactives.
-          </p>
+            Prototype de jeu de type <strong>Swarm Survivor</strong> réalisé sous Unity 3D, inspiré du genre popularisé 
+            par Vampire Survivors ainsi que Swarm. Jusqu'à 3 joueurs doivent coopérer pour survivre à des vagues infinies de monstres 
+            de plus en plus puissants.
+          </p><br>
 
-          <p><strong>Fonctionnement :</strong><br>
-            Le monstre se déplace librement dans un enclos. Lorsqu’un joueur appuie sur une console, il se rend vers une
-            zone dédiée pour effectuer une action (manger, se recharger, dormir), ce qui recharge une jauge
-            spécifique. Si
-            toutes les jauges tombent à zéro, la créature meurt.
-          </p>
+          <p><strong>Fonctionnalités développées :</strong><br>
+            – <strong>Multijoueur coopératif Steam</strong> : système de lobby jusqu'à 3 joueurs avec host/join<br>
+            – <strong>Système de classes diversifiées</strong> : Tank, DPS, Healer, etc., chacune avec son style de jeu unique<br>
+            – <strong>Progression par vagues</strong> : 2 configurations prédéfinies avec difficulté croissante<br>
+            – <strong>Système d'expérience</strong> : récupération d'XP sur les monstres éliminés<br>
+            – <strong>Compétences actives</strong> personnalisées par classe et compétences génériques accessibles à tous<br>
+            – <strong>Améliorations passives</strong> : augmentation du nombre de projectiles, taille des sorts, vitesse d'attaque, etc.<br>
+            – <strong>Évolution dynamique</strong> : montée en puissance progressive des joueurs et des ennemis
+          </p><br>
 
-          <p><strong>Mon rôle :</strong><br>
-            - Conception complète du prototype en solo<br>
-            - Programmation des jauges vitales, des déplacements et des interactions<br>
-            - Mise en place des systèmes d’état, triggers et conditions de fin<br>
-            - Travail sous contrainte de temps (projet express)
-          </p>
+          <p><strong>Exemples de compétences :</strong><br>
+            <em>Compétences actives génériques :</em><br>
+            <!-- Ajoute tes exemples ici, par exemple :
+            – Salve de projectiles : Lance 5 projectiles en éventail<br>
+            – Nova de feu : Explosion circulaire repoussant les ennemis<br>
+            – etc.
+            --><br>
+            
+            <em>Améliorations passives :</em><br>
+            <!-- Ajoute tes exemples ici, par exemple :
+            – +1 Projectile supplémentaire<br>
+            – +25% Taille des sorts<br>
+            – +15% Vitesse d'attaque<br>
+            – etc.
+            -->
+          </p><br>
 
-          <p><strong>Technologies :</strong> Unreal Engine 5, Blueprints</p>
+          <p><strong>Technologies :</strong> Unity 3D, C#, Steamworks API (multijoueur)</p>
 
           <p>
-            🔗 <em>Projet en cours de finalisation – lien GitHub à venir</em>
+            🔗 <a href="https://github.com/Drainor-GameDev/Project-Doomed" target="_blank" rel="noopener noreferrer">Voir le
+              projet sur GitHub</a>
           </p>
         </div>
       </div>
@@ -247,18 +376,17 @@
 
 
       <div class="project-card">
-        <div class="project-icon">🏰</div>
-        <h3>Tower Defense 2D</h3>
-        <p>Jeu de défense stratégique développé sous Unity 2D. Défendez votre château en plaçant des tours tactiquement
-          contre des vagues d'ennemis aux caractéristiques variées et évolutives.</p>
+        <div class="project-icon"></div>
+        <h3>Horror Game in production</h3>
+        <p>Jeu en développement revenez plus tard.</p>
         <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-3">Voir</a>
+          <a href="#" class="project-btn open-popup-btn" data-popup="popup-">Voir</a>
           <a href="#" class="project-btn">Télécharger</a>
         </div>
       </div>
 
-      <!-- Popup - Tower Defense -->
-      <div class="popup" id="popup-3" aria-hidden="true">
+      <!-- Popup - Requiem of the Swarm -->
+      <div class="popup" id="popup-5" aria-hidden="true">
         <div class="popup-content">
           <span class="close-popup-btn" aria-label="Fermer">&times;</span>
           <h2>Tower Defense (Prototype)</h2>
@@ -267,16 +395,16 @@
           <div class="carousel">
             <button class="carousel-btn prev">&#10094;</button>
             <div class="carousel-track">
-              <img src="assets/img/portfolio/td_map.jpg" alt="Carte du jeu">
-              <img src="assets/img/portfolio/td_towers.jpg" alt="Placement des tours">
-              <img src="assets/img/portfolio/td_enemies.jpg" alt="Vagues d’ennemis">
+              <img src="assets/img/portfolio/rots_map.jpg" alt="">
+              <img src="assets/img/portfolio/rots_group_player.jpg" alt="">
+              <img src="assets/img/portfolio/rots_choice.jpg" alt="">
             </div>
             <button class="carousel-btn next">&#10095;</button>
           </div>
 
           <p><strong>Présentation :</strong><br>
-            Prototype de jeu de type <strong>Tower Defense</strong> réalisé sous Unity 2D. Le joueur doit défendre un
-            château en plaçant stratégiquement des tours le long d’un chemin prédéfini.
+            Prototype de jeu de type <strong>Swarm</strong> réalisé sous Unity 3D. Le ou les joueur doit survivre le plus longtemps 
+            à des vague de monstres.
           </p>
 
           <p><strong>Fonctionnalités développées :</strong><br>
@@ -288,10 +416,10 @@
             – Implémentation du chemin via le système de path<br>
             – Interface utilisateur : menus, choix de tour, lancement de partie
           </p>
-          <p><strong>Technologies :</strong> Unity 2D, C#</p>
+          <p><strong>Technologies :</strong> Unity 3D, C#</p>
 
           <p>
-            🔗 <a href="https://github.com/Yayoaka/Tower-Defense-2d" target="_blank" rel="noopener noreferrer">Voir le
+            🔗 <a href="https://github.com/Drainor-GameDev/Project-Doomed" target="_blank" rel="noopener noreferrer">Voir le
               projet sur GitHub</a>
           </p>
         </div>
@@ -336,6 +464,28 @@
   <section id="education">
     <h2 class="section-title">Formation</h2>
     <div class="education-timeline">
+
+      <div class="education-item">
+        <div class="education-content">
+          <div class="education-year">2025</div>
+          <h3>Master 1</h3>
+          <h4>Ynov Connect, France</h4>
+          <ul>
+            <li>Game Development : Unity 3D
+              <li>Réalisation de 2 jeux, du concept à la production</li>
+                <ul><li>
+                    Requiem of the Swarm
+                </li>
+                <li>
+                      Horror Game
+                </li></ul>
+            </li>
+            <li>Moteurs de jeu : Unity & Unreal Engine</li>
+            <li>Gestion d'un projet IT</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="education-item">
         <div class="education-content">
           <div class="education-year">2024 - 2025</div>
