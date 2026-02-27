@@ -609,15 +609,15 @@ footer {
 
 .carousel-track {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     gap: 1rem;
     transition: transform 0.4s ease-in-out;
 }
 
 .carousel-track img {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 10px;
     object-fit: contain;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

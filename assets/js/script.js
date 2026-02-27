@@ -127,7 +127,7 @@ function initCarousels() {
         let currentIndex = 0;
 
         function updateCarousel() {
-            const slideWidth = slides[0].clientWidth + 10;
+            const slideWidth = slides[0].clientWidth + 10
             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
         }
 
