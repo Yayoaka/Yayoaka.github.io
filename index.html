@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas Studer - Game Developer</title>
+  <link rel="icon" type="image/png" href="assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
 
   <meta name="description" content="Lucas Studer, développeur de jeux vidéo (Unity, Unreal Engine, C#). Découvrez mes projets : Tower Defense 2D, Poupou le Lapin, Requiem of the Swarm, Fear of the Dark et TCG Collector.">
 
@@ -33,7 +38,12 @@
   <header>
     <nav>
       <div class="logo">Lucas Studer</div>
-      <ul class="nav-links">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home">Accueil</a></li>
         <li><a href="#about">À propos</a></li>
         <li><a href="#skills">Compétences</a></li>
@@ -65,7 +75,7 @@
     <h2 class="section-title">À propos</h2>
     <div class="about-content">
       <div class="profile-image">
-        <img src="assets/img/portfolio/img_profile.jpg" alt="Photo de profil" />
+        <img src="assets/img/portfolio/img_profile.webp" alt="Photo de profil" width="300" height="300" />
       </div>
       <div class="about-text">
         <h3>Game Programmer</h3>
@@ -80,7 +90,7 @@
         <div class="contact-info">
           <div class="contact-item">
             <strong>📱 Téléphone</strong><br>
-            +33 6 51 28 33 75
+            <a href="#" class="contact-link" id="phoneLink" aria-label="Numéro de téléphone, chargé dynamiquement"></a>
           </div>
           <div class="contact-item">
             <strong>📍 Ville</strong><br>
@@ -88,7 +98,7 @@
           </div>
           <div class="contact-item">
             <strong>✉️ Email</strong><br>
-            lucas@studer.fr
+            <a href="#" class="contact-link" id="emailLink" aria-label="Adresse email, chargée dynamiquement"></a>
           </div>
           <div class="contact-item">
             <strong>🎂 Âge</strong><br>
@@ -103,7 +113,7 @@
     <h2 class="section-title">Compétences</h2>
     <div class="skills-container">
       <div class="skill-category">
-        <h3>🎮 Développement de Jeux</h3>
+        <h3><i class="fas fa-gamepad" aria-hidden="true"></i>Développement de Jeux</h3>
         <ul class="skill-list">
           <li>Unity</li>
           <li>Unreal Engine</li>
@@ -114,7 +124,7 @@
         </ul>
       </div>
       <div class="skill-category">
-        <h3>🌐 Développement Web</h3>
+        <h3><i class="fas fa-globe" aria-hidden="true"></i>Développement Web</h3>
         <ul class="skill-list">
           <li>HTML</li>
           <li>CSS</li>
@@ -124,14 +134,14 @@
         </ul>
       </div>
       <div class="skill-category">
-        <h3>📱 Développement Mobile</h3>
+        <h3><i class="fas fa-mobile-screen-button" aria-hidden="true"></i>Développement Mobile</h3>
         <ul class="skill-list">
           <li>Android Studio</li>
           <li>Java</li>
         </ul>
       </div>
       <div class="skill-category">
-        <h3>🛠️ Outils & Environnements</h3>
+        <h3><i class="fas fa-toolbox" aria-hidden="true"></i>Outils & Environnements</h3>
         <ul class="skill-list">
           <li>VirtualBox</li>
           <li>Golang</li>
@@ -147,31 +157,39 @@
     <h2 class="section-title">Projets</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <div class="project-icon">🏰</div>
-        <h3>Tower Defense 2D</h3>
-        <p>Jeu de défense stratégique développé sous Unity 2D. Défendez votre château en plaçant des tours tactiquement
-          contre des vagues d'ennemis aux caractéristiques variées et évolutives.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-3">Voir</a>
-          <a href="https://github.com/Yayoaka/Tower-Defense-2d/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+        <img src="assets/img/Project/TowerDefense/td_map.webp" alt="" width="1280" height="720" loading="lazy" class="project-thumb">
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Unity 2D</span>
+            <span class="project-tag">Solo</span>
+            <span class="project-tag">Stratégie</span>
+          </div>
+          <h3>Tower Defense 2D</h3>
+          <p>Jeu de défense stratégique développé sous Unity 2D. Défendez votre château en plaçant des tours tactiquement
+            contre des vagues d'ennemis aux caractéristiques variées et évolutives.</p>
+          <div class="project-buttons">
+            <a href="#" class="project-btn open-popup-btn" data-popup="popup-3" aria-label="Voir les détails de Tower Defense 2D">Voir</a>
+            <a href="https://github.com/Yayoaka/Tower-Defense-2d/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+          </div>
         </div>
       </div>
 
       <!-- Popup - Tower Defense -->
       <div class="popup" id="popup-3" aria-hidden="true">
         <div class="popup-content">
-          <span class="close-popup-btn" aria-label="Fermer">&times;</span>
+          <span class="close-popup-btn" role="button" tabindex="0" aria-label="Fermer">&times;</span>
           <h2>Tower Defense</h2>
 
           <!-- Carrousel -->
           <div class="carousel">
-            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
             <div class="carousel-track">
-              <img src="assets/img/Project/TowerDefense/td_map.png" alt="Carte du jeu">
-              <img src="assets/img/Project/TowerDefense/td_towers.png" alt="Placement des tours">
-              <img src="assets/img/Project/TowerDefense/td_enemies.png" alt="Vagues d’ennemis">
+              <img src="assets/img/Project/TowerDefense/td_map.webp" alt="Carte du jeu" loading="lazy">
+              <img src="assets/img/Project/TowerDefense/td_towers.webp" alt="Placement des tours" loading="lazy">
+              <img src="assets/img/Project/TowerDefense/td_enemies.webp" alt="Vagues d’ennemis" loading="lazy">
             </div>
-            <button class="carousel-btn next">&#10095;</button>
+            <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+            <span class="carousel-counter" aria-live="polite">1 / 3</span>
           </div>
 
           <p><strong>Présentation :</strong><br>
@@ -200,94 +218,42 @@
 
 
 
-
-      <!--<div class="project-card">
-        <div class="project-icon">🎯</div>
-        <h3>Tamagochi 3D - Prototype</h3>
-        <p>Simulation de créature virtuelle en 3D avec système de jauges vitales. Développement solo utilisant les
-          Blueprints d'Unreal Engine 5 pour créer des interactions dynamiques.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-2">Voir</a>
-          <a href="#" class="project-btn">Télécharger</a>
-        </div>
-      </div>-->
-
-      <!-- Popup - Tamagochi 3D -->
-      <!--<div class="popup" id="popup-2" aria-hidden="true">
-        <div class="popup-content">
-          <span class="close-popup-btn" aria-label="Fermer">&times;</span>
-          <h2>Tamagochi (Prototype)</h2>-->
-
-          <!-- Carrousel -->
-          <!--<div class="carousel">
-            <button class="carousel-btn prev">&#10094;</button>
-            <div class="carousel-track">
-              <img src="assets/img/portfolio/tamagochi_idle.jpg" alt="Vue générale du Tamagochi">
-              <img src="assets/img/portfolio/tamagochi_eat.jpg" alt="Le monstre mange">
-              <img src="assets/img/portfolio/tamagochi_consoles.jpg" alt="Les consoles d’action">
-            </div>
-            <button class="carousel-btn next">&#10095;</button>
-          </div>-->
-
-          <!-- Description -->
-          <!--<p><strong>Présentation :</strong><br>
-            Ce prototype de jeu, réalisé en solo avec Unreal Engine 5 et Blueprint, s’inspire du principe des
-            Tamagotchis.
-            Le joueur doit maintenir les jauges vitales d’un petit monstre (faim, énergie, repos) à l’aide de
-            consoles interactives.
-          </p><br>
-
-          <p><strong>Fonctionnement :</strong><br>
-            Le monstre se déplace librement dans un enclos. Lorsqu’un joueur appuie sur une console, il se rend vers une
-            zone dédiée pour effectuer une action (manger, se recharger, dormir), ce qui recharge une jauge
-            spécifique. Si
-            toutes les jauges tombent à zéro, la créature meurt.
-          </p><br>
-
-          <p><strong>Mon rôle :</strong><br>
-            - Conception complète du prototype en solo<br>
-            - Programmation des jauges vitales, des déplacements et des interactions<br>
-            - Mise en place des systèmes d’état, triggers et conditions de fin<br>
-            - Travail sous contrainte de temps (projet express)
-          </p><br>
-
-          <p><strong>Technologies :</strong> Unreal Engine 5, Blueprints</p>
-
-          <p>
-            🔗 <em>Projet en cours de finalisation – lien GitHub à venir</em>
-          </p>
-        </div>
-      </div>-->
-
-
       <div class="project-card">
-        <div class="project-icon">🐇</div>
-        <h3>Poupou le Lapin</h3>
-        <p>Jeu d'action 2D en pixel art où vous incarnez un lapin affrontant des ennemis et des boss épiques. Projet
-          étudiant mêlant stratégie, combat et exploration à travers divers cartes.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-1">Voir</a>
-          <a href="https://github.com/Yayoaka/Poupou-rabbit-game/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+        <img src="assets/img/Project/PoupouRabbit/ppr_fight.webp" alt="" width="1280" height="720" loading="lazy" class="project-thumb">
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Unity 2D</span>
+            <span class="project-tag">Équipe</span>
+            <span class="project-tag">Action / Pixel Art</span>
+          </div>
+          <h3>Poupou le Lapin</h3>
+          <p>Jeu d'action 2D en pixel art où vous incarnez un lapin affrontant des ennemis et des boss épiques. Projet
+            étudiant mêlant stratégie, combat et exploration à travers divers cartes.</p>
+          <div class="project-buttons">
+            <a href="#" class="project-btn open-popup-btn" data-popup="popup-1" aria-label="Voir les détails de Poupou le Lapin">Voir</a>
+            <a href="https://github.com/Yayoaka/Poupou-rabbit-game/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+          </div>
         </div>
       </div>
 
       <!-- Popup - Poupou le Lapin-->
       <div class="popup" id="popup-1" aria-hidden="true">
         <div class="popup-content">
-          <span class="close-popup-btn">&times;</span>
+          <span class="close-popup-btn" role="button" tabindex="0" aria-label="Fermer">&times;</span>
           <h2>Poupou le Lapin</h2>
 
           <!-- Carrousel d'images -->
           <div class="carousel">
-            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
             <div class="carousel-track">
-              <img src="assets/img/Project/PoupouRabbit/ppr_menu.png" alt="Menu principal">
-              <img src="assets/img/Project/PoupouRabbit/ppr_player.png" alt="player">
-              <img src="assets/img/Project/PoupouRabbit/ppr_salleboss.png" alt="salle du boss">
-              <img src="assets/img/Project/PoupouRabbit/ppr_boss.png" alt="apparition du boss">
-              <img src="assets/img/Project/PoupouRabbit/ppr_fight.png" alt="combat contre boss">
+              <img src="assets/img/Project/PoupouRabbit/ppr_menu.webp" alt="Menu principal" loading="lazy">
+              <img src="assets/img/Project/PoupouRabbit/ppr_player.webp" alt="player" loading="lazy">
+              <img src="assets/img/Project/PoupouRabbit/ppr_salleboss.webp" alt="salle du boss" loading="lazy">
+              <img src="assets/img/Project/PoupouRabbit/ppr_boss.webp" alt="apparition du boss" loading="lazy">
+              <img src="assets/img/Project/PoupouRabbit/ppr_fight.webp" alt="combat contre boss" loading="lazy">
             </div>
-            <button class="carousel-btn next">&#10095;</button>
+            <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+            <span class="carousel-counter" aria-live="polite">1 / 5</span>
           </div>
 
           <!-- Description -->
@@ -319,32 +285,40 @@
 
       
       <div class="project-card">
-        <div class="project-icon">⚔️</div>
-        <h3>Requiem of the Swarm</h3>
-        <p>Jeu de survie coopératif développé sous Unity 3D. Affrontez des vagues infinies de monstres avec jusqu'à 3 joueurs, 
-          choisissez votre classe et améliorez vos compétences pour survivre le plus longtemps possible.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-4">Voir</a>
-          <a href="https://github.com/Yayoaka/Requiem_of_the_Swarm/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+        <img src="assets/img/Project/RequiemOfTheSwarm/rots_game01.webp" alt="" width="1280" height="720" loading="lazy" class="project-thumb">
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Unity 3D</span>
+            <span class="project-tag">Coop 3 joueurs</span>
+            <span class="project-tag">Survivor</span>
+          </div>
+          <h3>Requiem of the Swarm</h3>
+          <p>Jeu de survie coopératif développé sous Unity 3D. Affrontez des vagues infinies de monstres avec jusqu'à 3 joueurs,
+            choisissez votre classe et améliorez vos compétences pour survivre le plus longtemps possible.</p>
+          <div class="project-buttons">
+            <a href="#" class="project-btn open-popup-btn" data-popup="popup-4" aria-label="Voir les détails de Requiem of the Swarm">Voir</a>
+            <a href="https://github.com/Yayoaka/Requiem_of_the_Swarm/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+          </div>
         </div>
       </div>
 
       <!-- Popup - Requiem of the Swarm -->
       <div class="popup" id="popup-4" aria-hidden="true">
         <div class="popup-content">
-          <span class="close-popup-btn" aria-label="Fermer">&times;</span>
-          <h2>Requiem of the Swarm</h2></a>
+          <span class="close-popup-btn" role="button" tabindex="0" aria-label="Fermer">&times;</span>
+          <h2>Requiem of the Swarm</h2>
 
           <!-- Carrousel -->
           <div class="carousel">
-            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
             <div class="carousel-track">
-              <img src="assets/img/Project/RequiemOfTheSwarm/rots_selectChamp.png" alt="Choix des personnages">
-              <img src="assets/img/Project/RequiemOfTheSwarm/rots_map.png" alt="Carte du jeu">
-              <img src="assets/img/Project/RequiemOfTheSwarm/rots_game01.png" alt="Game 01">
-              <img src="assets/img/Project/RequiemOfTheSwarm/rots_game02.png" alt="Game 02">
+              <img src="assets/img/Project/RequiemOfTheSwarm/rots_selectChamp.webp" alt="Choix des personnages" loading="lazy">
+              <img src="assets/img/Project/RequiemOfTheSwarm/rots_map.webp" alt="Carte du jeu" loading="lazy">
+              <img src="assets/img/Project/RequiemOfTheSwarm/rots_game01.webp" alt="Game 01" loading="lazy">
+              <img src="assets/img/Project/RequiemOfTheSwarm/rots_game02.webp" alt="Game 02" loading="lazy">
             </div>
-            <button class="carousel-btn next">&#10095;</button>
+            <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+            <span class="carousel-counter" aria-live="polite">1 / 4</span>
           </div>
 
           <p><strong>Présentation :</strong><br>
@@ -393,37 +367,45 @@
 
 
       <div class="project-card">
-        <div class="project-icon">🔦</div>
-        <h3>Fear of the Dark</h3>
-        <p>Jeu d'horreur psychologique solo développé sous Unity 3D. 
-          Évoluez dans un bureau plongé dans les ténèbres et survivez à l'obscurité pour trouver votre seule échappatoire.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-5">Voir</a>
-          <a href="https://github.com/Yayoaka/Fear-of-the-Dark/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+        <img src="assets/img/Project/FearOfTheDark/fotd_map01.webp" alt="" width="1280" height="720" loading="lazy" class="project-thumb">
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Unity 3D</span>
+            <span class="project-tag">Solo</span>
+            <span class="project-tag">Horreur</span>
+          </div>
+          <h3>Fear of the Dark</h3>
+          <p>Jeu d'horreur psychologique solo développé sous Unity 3D.
+            Évoluez dans un bureau plongé dans les ténèbres et survivez à l'obscurité pour trouver votre seule échappatoire.</p>
+          <div class="project-buttons">
+            <a href="#" class="project-btn open-popup-btn" data-popup="popup-5" aria-label="Voir les détails de Fear of the Dark">Voir</a>
+            <a href="https://github.com/Yayoaka/Fear-of-the-Dark/releases/tag/V1.0" target="_blank" class="project-btn">Télécharger</a>
+          </div>
         </div>
       </div>
 
       <!-- Popup - Fear of the Dark -->
       <div class="popup" id="popup-5" aria-hidden="true">
         <div class="popup-content">
-          <span class="close-popup-btn" aria-label="Fermer">&times;</span>
+          <span class="close-popup-btn" role="button" tabindex="0" aria-label="Fermer">&times;</span>
           <h2>Fear of the Dark</h2>
 
           <!-- Carrousel -->
           <div class="carousel">
-            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
             <div class="carousel-track">
-              <img src="assets/img/Project/FearOfTheDark/fotd_map01.png" alt="carte 01">
-              <img src="assets/img/Project/FearOfTheDark/otd_map02.png" alt="carte 02">
-              <img src="assets/img/Project/FearOfTheDark/fotd_exit.png" alt="porte de sortie">
-              <img src="assets/img/Project/FearOfTheDark/otd_quest.png" alt="queste pour sortir">
-              <img src="assets/img/Project/FearOfTheDark/otd_end.png" alt="fin">
+              <img src="assets/img/Project/FearOfTheDark/fotd_map01.webp" alt="carte 01" loading="lazy">
+              <img src="assets/img/Project/FearOfTheDark/otd_map02.webp" alt="carte 02" loading="lazy">
+              <img src="assets/img/Project/FearOfTheDark/fotd_exit.webp" alt="porte de sortie" loading="lazy">
+              <img src="assets/img/Project/FearOfTheDark/otd_quest.webp" alt="quête pour sortir" loading="lazy">
+              <img src="assets/img/Project/FearOfTheDark/otd_end.webp" alt="fin" loading="lazy">
             </div>
-            <button class="carousel-btn next">&#10095;</button>
+            <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+            <span class="carousel-counter" aria-live="polite">1 / 5</span>
           </div>
 
           <p><strong>Présentation :</strong><br>
-            Fear of the Dark</em> est un jeu d'horreur psychologique solo réalisé sous Unity 3D.
+            <em>Fear of the Dark</em> est un jeu d'horreur psychologique solo réalisé sous Unity 3D.
             Le joueur se retrouve piégé dans un bureau plongé dans l'obscurité totale, seulement éclairé
             par quelques spots de lumière. Très vite, une règle s'impose : <strong>la lumière sauve,
             l'obscurité tue.</strong>
@@ -448,32 +430,40 @@
 
 
             <div class="project-card">
-        <div class="project-icon">🃏</div>
-        <h3>TCG Collector</h3>
-        <p>Application Unity solo pour ouvrir des boosters de cartes à collectionner virtuelles. Constituez votre
-          collection sur plusieurs licences et échangez vos doublons avec vos amis.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn open-popup-btn" data-popup="popup-6">Voir</a>
-          <a href="https://github.com/Yayoaka/TCGCollector" target="_blank" class="project-btn">GitHub</a>
+        <img src="assets/img/Project/TCGCollector/tcg_booster.webp" alt="" width="1280" height="720" loading="lazy" class="project-thumb">
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Unity 6 (URP)</span>
+            <span class="project-tag">Solo</span>
+            <span class="project-tag">Collection</span>
+          </div>
+          <h3>TCG Collector</h3>
+          <p>Application Unity solo pour ouvrir des boosters de cartes à collectionner virtuelles. Constituez votre
+            collection sur plusieurs licences et échangez vos doublons avec vos amis.</p>
+          <div class="project-buttons">
+            <a href="#" class="project-btn open-popup-btn" data-popup="popup-6" aria-label="Voir les détails de TCG Collector">Voir</a>
+            <a href="https://github.com/Yayoaka/TCGCollector" target="_blank" class="project-btn">GitHub</a>
+          </div>
         </div>
       </div>
 
       <!-- Popup - TCG Collector -->
       <div class="popup" id="popup-6" aria-hidden="true">
         <div class="popup-content">
-          <span class="close-popup-btn" aria-label="Fermer">&times;</span>
+          <span class="close-popup-btn" role="button" tabindex="0" aria-label="Fermer">&times;</span>
           <h2>TCG Collector</h2>
 
           <!-- Carrousel -->
           <div class="carousel">
-            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
             <div class="carousel-track">
-              <img src="assets/img/Project/TCGCollector/tcg_booster.png" alt="Ouverture d'un booster">
-              <img src="assets/img/Project/TCGCollector/tcg_carte.png" alt="Détail d'une carte">
-              <img src="assets/img/Project/TCGCollector/tcg_marketplace.png" alt="Marketplace entre joueurs">
-              <img src="assets/img/Project/TCGCollector/tcg_profil.png" alt="Profil et collection">
+              <img src="assets/img/Project/TCGCollector/tcg_booster.webp" alt="Ouverture d'un booster" loading="lazy">
+              <img src="assets/img/Project/TCGCollector/tcg_carte.webp" alt="Détail d'une carte" loading="lazy">
+              <img src="assets/img/Project/TCGCollector/tcg_marketplace.webp" alt="Marketplace entre joueurs" loading="lazy">
+              <img src="assets/img/Project/TCGCollector/tcg_profil.webp" alt="Profil et collection" loading="lazy">
             </div>
-            <button class="carousel-btn next">&#10095;</button>
+            <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+            <span class="carousel-counter" aria-live="polite">1 / 4</span>
           </div>
 
           <p><strong>Présentation :</strong><br>
@@ -501,37 +491,6 @@
         </div>
       </div>
 
-
-      <!-- <div class="project-card">
-        <div class="project-icon">⚡</div>
-        <h3>Demolynov (Challenge 48h)</h3>
-        <p>Défi de développement en 48 heures, mettant en avant ma capacité à travailler sous pression et à livrer
-          rapidement.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn">Voir</a>
-          <a href="#" class="project-btn">Télécharger</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-icon">📱</div>
-        <h3>Application Mobile</h3>
-        <p>Application Android développée en Java, intégrant des fonctionnalités modernes et une expérience utilisateur
-          optimisée.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn">Voir</a>
-          <a href="#" class="project-btn">Télécharger</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-icon">🌐</div>
-        <h3>Site Web Interactif</h3>
-        <p>Projet web alliant design moderne et fonctionnalités avancées, démontrant mes compétences en développement
-          front-end.</p>
-        <div class="project-buttons">
-          <a href="#" class="project-btn">Voir</a>
-          <a href="#" class="project-btn">Télécharger</a>
-        </div>
-      </div>-->
     </div>
   </section>
 
@@ -545,14 +504,12 @@
           <h3>Master 1</h3>
           <h4>Ynov Connect, France</h4>
           <ul>
-            <li>Game Development : Unity 3D
-              <li>Réalisation de 2 jeux, du concept à la production</li>
-                <ul><li>
-                    Requiem of the Swarm
-                </li>
-                <li>
-                      Horror Game
-                </li></ul>
+            <li>Game Development : Unity 3D</li>
+            <li>Réalisation de 2 jeux, du concept à la production
+              <ul>
+                <li>Requiem of the Swarm</li>
+                <li>Horror Game</li>
+              </ul>
             </li>
             <li>Moteurs de jeu : Unity & Unreal Engine</li>
             <li>Gestion d'un projet IT</li>

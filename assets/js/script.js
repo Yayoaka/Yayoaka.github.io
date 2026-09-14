@@ -1,7 +1,12 @@
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // Création des particules animées
 function createParticles() {
+    if (prefersReducedMotion) return;
+
     const container = document.getElementById('particles');
     const particleCount = 50;
+    const fragment = document.createDocumentFragment();
 
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -13,24 +18,58 @@ function createParticles() {
         particle.style.height = `${size}px`;
         particle.style.animationDelay = `${Math.random() * 6}s`;
         particle.style.animationDuration = `${Math.random() * 3 + 3}s`;
-        container.appendChild(particle);
+        fragment.appendChild(particle);
     }
+    container.appendChild(fragment);
 }
 
-// Défilement fluide pour les liens de navigation
-function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', e => {
-            e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+// Fermeture du menu mobile au clic sur un lien de nav
+// (la navigation elle-même est gérée nativement : liens <a href="#..."> +
+// `scroll-behavior: smooth` / `scroll-padding-top` en CSS, pour que l'URL
+// se mette à jour correctement et reste partageable/navigable au retour arrière)
+function initMobileNav() {
+    const toggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (!toggle || !navLinks) return;
+
+    const closeMenu = () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    };
+
+    toggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
     });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMenu();
+    });
+}
+
+// Coordonnées construites au chargement plutôt qu'écrites en clair dans le HTML,
+// pour limiter le scraping automatisé par des robots qui ne lisent que le HTML statique.
+function initContactLinks() {
+    const phoneDigits = ['+33', '6', '51', '28', '33', '75'];
+    const phoneLink = document.getElementById('phoneLink');
+    if (phoneLink) {
+        phoneLink.textContent = phoneDigits.join(' ');
+        phoneLink.href = 'tel:' + phoneDigits.join('');
+    }
+
+    const user = 'lucas';
+    const domain = 'studer.fr';
+    const emailLink = document.getElementById('emailLink');
+    if (emailLink) {
+        emailLink.textContent = `${user}@${domain}`;
+        emailLink.href = `mailto:${user}@${domain}`;
+    }
 }
 
 // Gestion de la soumission du formulaire
@@ -69,27 +108,47 @@ function addHoverEffects() {
 }
 
 // Gestion des popups
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 function initPopups() {
     const openBtns = document.querySelectorAll('.open-popup-btn');
     const closeBtns = document.querySelectorAll('.close-popup-btn');
+    let lastFocused = null;
+
+    const openPopup = (popup, trigger) => {
+        lastFocused = trigger;
+        popup.classList.add('visible');
+        popup.setAttribute('aria-hidden', 'false');
+        const closeBtn = popup.querySelector('.close-popup-btn');
+        if (closeBtn) closeBtn.focus();
+    };
+
+    const closePopup = popup => {
+        popup.classList.remove('visible');
+        popup.setAttribute('aria-hidden', 'true');
+        if (lastFocused) lastFocused.focus();
+    };
 
     openBtns.forEach(btn => {
         btn.addEventListener('click', e => {
             e.preventDefault();
             const popup = document.getElementById(btn.dataset.popup);
-            if (popup) {
-                popup.classList.add('visible');
-                popup.setAttribute('aria-hidden', 'false');
-            }
+            if (popup) openPopup(popup, btn);
         });
     });
 
     closeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        const close = () => {
             const popup = btn.closest('.popup');
-            if (popup) {
-                popup.classList.remove('visible');
-                popup.setAttribute('aria-hidden', 'true');
+            if (popup) closePopup(popup);
+        };
+        btn.addEventListener('click', close);
+        // Le bouton fermer est un <span role="button">, pas un <button> natif :
+        // il faut donc gérer Entrée/Espace manuellement pour rester accessible au clavier.
+        btn.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                close();
             }
         });
     });
@@ -97,20 +156,38 @@ function initPopups() {
     // Clic en dehors
     window.addEventListener('click', e => {
         document.querySelectorAll('.popup.visible').forEach(popup => {
-            if (e.target === popup) {
-                popup.classList.remove('visible');
-                popup.setAttribute('aria-hidden', 'true');
-            }
+            if (e.target === popup) closePopup(popup);
         });
     });
 
-    // Touche Échap
+    // Clavier : Échap referme, ← / → naviguent le carousel, Tab reste piégé dans la popup ouverte
     window.addEventListener('keydown', e => {
+        const popup = document.querySelector('.popup.visible');
+        if (!popup) return;
+
         if (e.key === 'Escape') {
-            document.querySelectorAll('.popup.visible').forEach(popup => {
-                popup.classList.remove('visible');
-                popup.setAttribute('aria-hidden', 'true');
-            });
+            closePopup(popup);
+            return;
+        }
+
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            const btn = popup.querySelector(e.key === 'ArrowLeft' ? '.carousel-btn.prev' : '.carousel-btn.next');
+            if (btn) btn.click();
+            return;
+        }
+
+        if (e.key === 'Tab') {
+            const focusable = Array.from(popup.querySelectorAll(FOCUSABLE_SELECTOR));
+            if (focusable.length === 0) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
         }
     });
 }
@@ -124,11 +201,13 @@ function initCarousels() {
         const slides = track.querySelectorAll('img');
         const prevBtn = carousel.querySelector('.carousel-btn.prev');
         const nextBtn = carousel.querySelector('.carousel-btn.next');
+        const counter = carousel.querySelector('.carousel-counter');
         let currentIndex = 0;
 
         function updateCarousel() {
             const slideWidth = slides[0].clientWidth + 10
             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            if (counter) counter.textContent = `${currentIndex + 1} / ${slides.length}`;
         }
 
         prevBtn.addEventListener('click', () => {
@@ -158,7 +237,8 @@ function closeAllPopupsOnLoad() {
 document.addEventListener('DOMContentLoaded', () => {
     closeAllPopupsOnLoad();
     createParticles();
-    initSmoothScrolling();
+    initMobileNav();
+    initContactLinks();
     initFormSubmission();
     initScrollEffect();
     addHoverEffects();
